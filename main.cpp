@@ -39,7 +39,18 @@
 using namespace std;
 
 // Attention to check config in GradientUpdater
+#if 0
 #define TEST_NFM
+#define TEST_FM
+#define TEST_FFM
+#define TEST_GBM
+#define TEST_GMM
+#define TEST_TM
+#define TEST_EMB
+#define TEST_CNN
+#define TEST_VAE
+#endif
+#define TEST_RNN
 
 /* Recommend Configuration
  * Distributed LR lr=0.1
