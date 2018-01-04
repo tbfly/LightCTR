@@ -60,7 +60,7 @@ public:
             for (size_t rid = 0; rid < dataRow_cnt; rid++) {
                 
                 auto task = [&, rid]() {
-                    const vector<double> *pred = Predict(rid, &dataSet);
+                    vector<double> *pred = Predict(rid, &dataSet);
                     
                     assert(pred->size() == multiclass_output_cnt);
                     outputActivFun.forward(pred);
@@ -127,7 +127,7 @@ public:
                 std::atomic<int> correct(0);
                 for (size_t rid = 0; rid < dataRow_cnt; rid++) {
                     auto task = [&, rid]() {
-                        const vector<double> *pred = Predict(rid, &dataSet);
+                        vector<double> *pred = Predict(rid, &dataSet);
                         
                         outputActivFun.forward(pred);
                         
